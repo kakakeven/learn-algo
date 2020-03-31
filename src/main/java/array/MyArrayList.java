@@ -36,6 +36,7 @@ public class MyArrayList {
     }
 
     public boolean delete(int index) {
+
         return false;
     }
 
