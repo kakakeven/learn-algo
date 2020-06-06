@@ -8,5 +8,11 @@
     <artifactId>learn-algo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+    </properties>
+
+    <dependencies>
+
+    </dependencies>
 
 </project>

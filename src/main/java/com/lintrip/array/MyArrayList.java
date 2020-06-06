@@ -1,4 +1,4 @@
-package array;
+package com.lintrip.array;
 
 /**
  * ArrayList 的简易实现
