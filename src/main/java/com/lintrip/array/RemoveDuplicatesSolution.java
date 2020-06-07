@@ -7,15 +7,6 @@ package com.lintrip.array;
  */
 public class RemoveDuplicatesSolution implements Solution {
 
-    public static void main(String[] args) {
-        int[] array = {0, 1, 1, 2, 2, 3, 3};
-        int length = removeDuplicates(array);
-        System.out.println(length);
-        for (int i = 0; i < length; i++) {
-            System.out.println(array[i]);
-        }
-    }
-
     /**
      * 比较直观但是性能比较差的一种解题方法
      * <p>
@@ -25,7 +16,7 @@ public class RemoveDuplicatesSolution implements Solution {
      * @param nums
      * @return
      */
-    public static int removeDuplicates(int[] nums) {
+    public int solution01(int[] nums) {
         int length = nums.length;
         int index = length - 1;
         while (index > 0) {
@@ -42,4 +33,26 @@ public class RemoveDuplicatesSolution implements Solution {
         return length;
     }
 
+    /**
+     * 性能较好的算法，使用双指针解决位移问题
+     * 最终慢指针指向的就是最大值的索引值，结果数组长度等于最大值的索引 + 1
+     *
+     * @param nums
+     * @return
+     */
+    public int solution02(int[] nums) {
+        if (nums.length < 2) {
+            return nums.length;
+        }
+        int i = 0;
+        int j = 1;
+        while (j < nums.length) {
+            if (nums[i] != nums[j]) {
+                i++;
+                nums[i] = nums[j];
+            }
+            j++;
+        }
+        return i + 1;
+    }
 }
