@@ -3,7 +3,7 @@ package array;
 /**
  * ArrayList 的简易实现
  */
-public class MyArrayList {
+public class MyArray {
 
     /**
      * 实际存储的数据
@@ -25,19 +25,50 @@ public class MyArrayList {
      *
      * @param capacity
      */
-    public MyArrayList(int capacity) {
+    public MyArray(int capacity) {
         data = new int[capacity];
         this.n = capacity;
         this.count = 0;
     }
 
-    public void insert() {
-
+    /**
+     * 插入元素到指定位置
+     *
+     * @param index
+     * @param value
+     * @return
+     */
+    public boolean insert(int index, int value) {
+        if (count == n) {
+            System.out.println("没有可插入位置");
+            return false;
+        }
+        if (index < 0 || index > count) {
+            System.out.println("位置不合法");
+        }
+        for (int i = count; i > index; --i) {
+            data[i] = data[i - 1];
+        }
+        data[index] = value;
+        ++count;
+        return true;
     }
 
+    /**
+     * 删除指定位置的元素
+     *
+     * @param index
+     * @return
+     */
     public boolean delete(int index) {
-
-        return false;
+        if (index < 0 || index >= count) {
+            return false;
+        }
+        for (int i = index + 1; i < count; ++i) {
+            data[i - 1] = data[i];
+        }
+        --count;
+        return true;
     }
 
     /**
