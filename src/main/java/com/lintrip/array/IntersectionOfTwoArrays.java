@@ -1,4 +1,4 @@
-package array;
+package com.lintrip.array;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,12 +9,15 @@ import java.util.Map;
  * 350.两个数组的交集 II
  * <p>
  * 给定两个数组，编写一个函数来计算它们的交集。
+ *
+ * @author kakakeven
  */
 public class IntersectionOfTwoArrays {
 
     public int[] intersect(int[] nums1, int[] nums2) {
         List<Integer> resultList = new ArrayList<>();
         // 引入 HashMap 来存储每一个值出现的次数
+        // 轮询数组 1 统计 1 中每个元素出现次数
         Map<Integer, Integer> nums1CountMap = new HashMap<>();
         for (Integer num : nums1) {
             if (!nums1CountMap.containsKey(num)) {
