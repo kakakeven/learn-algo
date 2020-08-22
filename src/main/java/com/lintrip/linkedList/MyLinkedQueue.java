@@ -1,4 +1,4 @@
-package linkedList;
+package com.lintrip.linkedList;
 
 public class MyLinkedQueue {
 }
